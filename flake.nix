@@ -2,6 +2,7 @@
   description = "A thorough example of a featureful REST API in Axum";
 
   inputs = {
+    cargo2nix.url = "github:cargo2nix/cargo2nix/minor";
     flake-compat.url = "github:edolstra/flake-compat";
     flake-compat.flake = false;
     flake-utils.url = "github:numtide/flake-utils";
