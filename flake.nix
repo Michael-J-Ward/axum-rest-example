@@ -22,10 +22,8 @@
         pkgs = import nixpkgs {
           inherit system;
 
-          overlays = [
-            (import inputs.rust-overlay)
-            (final: prev: { inherit master unstable; })
-          ];
+          overlays = inputs.cargo2nix.overlays."${system}"
+            ++ [ (final: prev: { inherit master unstable; }) ];
         };
 
         sharedInputs = with pkgs;
